@@ -110,7 +110,7 @@ body {
 /* ===== INTRO ===== */
 .intro {
   background: #fff;
-  padding: 100px 428px;
+  padding: 90px 428px;
 }
 
 .intro-container {
@@ -119,16 +119,16 @@ body {
 }
 
 .intro h2 {
-  font-size: 2.75rem;
+  font-size: 2.67rem;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 24px;
+  margin-bottom: 33px;
 }
 
 .intro-text {
   color: #555555;
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.5rem;
+  line-height: 1.6;
   margin-bottom: 32px;
 }
 
@@ -143,7 +143,7 @@ body {
   background: #e8f4f8;
   border-radius: 12px;
   padding: 36px 44px;
-  margin-bottom: 32px;
+  margin-bottom: 4px;
 }
 
 .tech-box ul {
@@ -153,7 +153,7 @@ body {
 
 .tech-box li {
   color: #2c3e50;
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   margin-bottom: 16px;
   line-height: 1.5;
 }
@@ -165,7 +165,7 @@ body {
 /* ===== SERVICIOS ===== */
 .servicios {
   background: #f5f5f5;
-  padding: 110px 520px;
+  padding: 110px 338px;
 }
 
 .section-container {
@@ -220,7 +220,8 @@ body {
   padding: 12px 32px;
   border-radius: 50px;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-family:   Arial, sans-serif;
   cursor: pointer;
   width: fit-content;
   transition: box-shadow 0.2s;
