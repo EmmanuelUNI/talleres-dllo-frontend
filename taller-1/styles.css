@@ -14,7 +14,6 @@ body {
   background: #fff;
 }
 
-
 .navbar {
   position: sticky;
   top: 0;
@@ -106,7 +105,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* ===== INTRO ===== */
 .intro {
   background: #fff;
   padding: 90px 428px;
@@ -230,7 +228,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
 .portafolio {
   background: #fff;
   padding: 110px 300px;
@@ -270,7 +267,6 @@ body {
 .p-blue2 { background: #3498db; }
 .p-green2 { background: #2ecc71; }
 
-/* ===== CONTACTO ===== */
 .contacto {
   background: #f5f5f5;
   padding: 110px 570px;
@@ -359,7 +355,7 @@ body {
   line-height: 2.2;
 }
 
-/* DESKTOP S (≤ 1600px) */
+/* DESKTOP S */
 @media (max-width: 1600px) {
   .navbar {
     padding: 0 80px;
@@ -548,13 +544,11 @@ body {
     color: #2c3e50;
   }
 
-    /* Cards en 2 columnas en tablet */
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
-  /* Centrar la tercera card */
   .cards-grid .card:nth-child(3) {
     grid-column: 1 / -1;
     justify-self: center;
