@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CORAL = "#F4485A";
+const CORAL = "#e94560";
 const DARK_NAV = "#0f172a";
 const DARK_SECTION = "#111827";
 const DARK_COUNTER = "#1e2a3a";
@@ -16,11 +16,11 @@ function Navbar() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: "rgba(15, 23, 42, 0.97)",
+        backgroundColor: "rgba(26, 26, 46,1)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 48px",
+        padding: "46px 54px",
         height: "60px",
       }}
     >
@@ -28,8 +28,8 @@ function Navbar() {
         style={{
           color: CORAL,
           fontWeight: 700,
-          fontSize: "20px",
-          fontFamily: "Poppins, sans-serif",
+          fontSize: "32px",
+          fontFamily: "Arial, sans-serif",
           letterSpacing: "-0.3px",
         }}
       >
@@ -41,14 +41,14 @@ function Navbar() {
             key={item}
             href="#"
             style={{
-              color: "#ffffff",
+              color: "#cac5bf",
               textDecoration: "none",
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "15px",
+              fontFamily: "Arial, sans-serif",
+              fontSize: "20px",
               fontWeight: 400,
             }}
             onMouseEnter={(e) => (e.target.style.color = CORAL)}
-            onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+            onMouseLeave={(e) => (e.target.style.color = "#cac5bf")}
           >
             {item}
           </a>
@@ -63,34 +63,34 @@ function Hero() {
     <section
       style={{
         background:
-          "linear-gradient(135deg, #0f172a 0%, #0f2444 50%, #0a3060 100%)",
+          "linear-gradient(135deg, #1a1a2e 0%, #161f3b 65%, #0a3060 100%)",
         minHeight: "540px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "60px",
+        paddingTop: "180px",
       }}
     >
-      <div style={{ textAlign: "center", maxWidth: "680px", padding: "0 24px" }}>
+      <div style={{ textAlign: "center", maxWidth: "1800px", padding: "0 24px" }}>
         <h1
           style={{
-            fontSize: "52px",
-            fontWeight: 800,
+            fontSize: "69px",
+            fontWeight: 600,
             color: "#ffffff",
             lineHeight: 1.15,
             marginBottom: "20px",
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "Arial, sans-serif",
           }}
         >
           Aprende <span style={{ color: CORAL }}>React</span> desde cero
         </h1>
         <p
           style={{
-            color: "#94a3b8",
-            fontSize: "17px",
+            color: "#aaaaaa",
+            fontSize: "26px",
             lineHeight: 1.65,
             marginBottom: "36px",
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "Arial, sans-serif",
             fontWeight: 400,
           }}
         >
@@ -107,7 +107,7 @@ function Hero() {
             padding: "15px 40px",
             fontSize: "16px",
             fontWeight: 600,
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "Arial, sans-serif",
             cursor: "pointer",
           }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#e03347")}
@@ -168,7 +168,7 @@ function CourseCard({ icon, title, desc, badge }) {
           fontSize: "18px",
           fontWeight: 700,
           color: "#1a202c",
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: "Arial, sans-serif",
         }}
       >
         {title}
@@ -178,7 +178,7 @@ function CourseCard({ icon, title, desc, badge }) {
           color: "#718096",
           fontSize: "14px",
           lineHeight: 1.6,
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: "Arial, sans-serif",
           flex: 1,
         }}
       >
@@ -193,7 +193,7 @@ function CourseCard({ icon, title, desc, badge }) {
             padding: "5px 14px",
             fontSize: "12px",
             fontWeight: 600,
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "Arial, sans-serif",
             display: "inline-block",
           }}
         >
@@ -214,7 +214,7 @@ function CoursesSection() {
               fontSize: "36px",
               fontWeight: 800,
               color: "#1a202c",
-              fontFamily: "Poppins, sans-serif",
+              fontFamily: "Arial, sans-serif",
               marginBottom: "10px",
             }}
           >
@@ -224,7 +224,7 @@ function CoursesSection() {
             style={{
               color: "#718096",
               fontSize: "16px",
-              fontFamily: "Poppins, sans-serif",
+              fontFamily: "Arial, sans-serif",
             }}
           >
             Elige el camino que mejor se adapte a ti
@@ -256,7 +256,7 @@ function Counter() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: "Arial, sans-serif",
     flexShrink: 0,
   };
 
@@ -273,7 +273,7 @@ function Counter() {
           fontSize: "36px",
           fontWeight: 800,
           color: "#ffffff",
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: "Arial, sans-serif",
           marginBottom: "12px",
         }}
       >
@@ -283,7 +283,7 @@ function Counter() {
         style={{
           color: "#94a3b8",
           fontSize: "16px",
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: "Arial, sans-serif",
           marginBottom: "40px",
         }}
       >
@@ -313,7 +313,7 @@ function Counter() {
               color: CORAL,
               fontSize: "48px",
               fontWeight: 700,
-              fontFamily: "Poppins, sans-serif",
+              fontFamily: "Arial, sans-serif",
               minWidth: "60px",
               textAlign: "center",
               lineHeight: 1,
@@ -332,7 +332,7 @@ function Counter() {
         </div>
       </div>
 
-      <p style={{ color: "#94a3b8", fontSize: "15px", fontFamily: "Poppins, sans-serif" }}>
+      <p style={{ color: "#94a3b8", fontSize: "15px", fontFamily: "Arial, sans-serif" }}>
         estudiantes inscritos
       </p>
     </section>
@@ -348,7 +348,7 @@ function Footer() {
         textAlign: "center",
       }}
     >
-      <p style={{ color: "#94a3b8", fontSize: "14px", fontFamily: "Poppins, sans-serif" }}>
+      <p style={{ color: "#94a3b8", fontSize: "14px", fontFamily: "Arial, sans-serif" }}>
         © 2026{" "}
         <span style={{ color: CORAL, fontWeight: 600 }}>ReactAcademy</span>
         {". Taller 02 — React Fundamentos."}
@@ -361,9 +361,9 @@ export default function App() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;500;600;700;800&display=swap');
       `}</style>
-      <div style={{ fontFamily: "Poppins, sans-serif" }}>
+      <div style={{ fontFamily: "Arial, sans-serif" }}>
         <Navbar />
         <Hero />
         <CoursesSection />
