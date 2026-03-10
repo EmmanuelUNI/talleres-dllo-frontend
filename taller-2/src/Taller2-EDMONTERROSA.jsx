@@ -63,12 +63,13 @@ function Hero() {
     <section
       style={{
         background:
-          "linear-gradient(135deg, #1a1a2e 0%, #161f3b 65%, #0a3060 100%)",
+          "linear-gradient(135deg, #1a1a2e 0%, #161f3b 50%, #0a3060 100%)",
         minHeight: "540px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "180px",
+        paddingTop: "240px",
+        paddingBottom: "129px",
       }}
     >
       <div style={{ textAlign: "center", maxWidth: "1800px", padding: "0 24px" }}>
@@ -78,7 +79,7 @@ function Hero() {
             fontWeight: 600,
             color: "#ffffff",
             lineHeight: 1.15,
-            marginBottom: "20px",
+            marginBottom: "40px",
             fontFamily: "Arial, sans-serif",
           }}
         >
@@ -87,9 +88,9 @@ function Hero() {
         <p
           style={{
             color: "#aaaaaa",
-            fontSize: "26px",
+            fontSize: "26.5px",
             lineHeight: 1.65,
-            marginBottom: "36px",
+            marginBottom: "48px",
             fontFamily: "Arial, sans-serif",
             fontWeight: 400,
           }}
@@ -104,9 +105,9 @@ function Hero() {
             color: "#ffffff",
             border: "none",
             borderRadius: "50px",
-            padding: "15px 40px",
-            fontSize: "16px",
-            fontWeight: 600,
+            padding: "24px 49px",
+            fontSize: "22px",
+            fontWeight: 700,
             fontFamily: "Arial, sans-serif",
             cursor: "pointer",
           }}
