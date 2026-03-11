@@ -1,9 +1,6 @@
 import { useState } from "react";
 
 const CORAL = "#e94560";
-const DARK_NAV = "#0f172a";
-const DARK_SECTION = "#111827";
-const DARK_COUNTER = "#1e2a3a";
 const CARD_BG = "#ffffff";
 const LIGHT_BG = "#f3f4f6";
 
@@ -153,20 +150,20 @@ function CourseCard({ icon, title, desc, badge }) {
     <div
       style={{
         backgroundColor: CARD_BG,
-        borderRadius: "12px",
-        padding: "28px 36px",
+        borderRadius: "18px",
+        padding: "44px 24px",
         flex: "1 1 0",
-        minWidth: 350,
+        minWidth: 0,
         boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
         display: "flex",
         flexDirection: "column",
-        gap: "30px",
+        gap: "20px",
       }}
     >
-      <div style={{ fontSize: "36px", lineHeight: 1 }}>{icon}</div>
+      <div style={{ fontSize: "53px", lineHeight: 1, marginBottom:"14px", marginTop:"6px" }}>{icon}</div>
       <h3
         style={{
-          fontSize: "28px",
+          fontSize: "26px",
           fontWeight: 700,
           color: "#1a202c",
           fontFamily: "Arial, sans-serif",
@@ -191,8 +188,8 @@ function CourseCard({ icon, title, desc, badge }) {
             backgroundColor: CORAL,
             color: "#ffffff",
             borderRadius: "50px",
-            padding: "5px 14px",
-            fontSize: "12px",
+            padding: "10px 18px",
+            fontSize: "16px",
             fontWeight: 600,
             fontFamily: "Arial, sans-serif",
             display: "inline-block",
@@ -232,7 +229,7 @@ function CoursesSection() {
             Elige el camino que mejor se adapte a ti
           </p>
         </div>
-        <div style={{ display: "flex", gap: "24px" }}>
+        <div style={{ display: "flex", gap: "40px" }}>
           {courses.map((c) => (
             <CourseCard key={c.title} {...c} />
           ))}
@@ -246,8 +243,8 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   const btnStyle = {
-    width: "52px",
-    height: "52px",
+    width: "64px",
+    height: "64px",
     borderRadius: "50%",
     backgroundColor: CORAL,
     color: "#ffffff",
@@ -265,28 +262,28 @@ function Counter() {
   return (
     <section
       style={{
-        backgroundColor: DARK_SECTION,
-        padding: "80px 48px 88px",
+        backgroundColor: "#1a1a2e",
+        padding: "104px 48px 150px",
         textAlign: "center",
       }}
     >
       <h2
         style={{
-          fontSize: "36px",
-          fontWeight: 800,
+          fontSize: "43px",
+          fontWeight: 600,
           color: "#ffffff",
           fontFamily: "Arial, sans-serif",
-          marginBottom: "12px",
+          marginBottom: "28px",
         }}
       >
-        ¿Cuántos estudiantes van a inscribirse?
+        Cuántos estudiantes van a inscribirse?
       </h2>
       <p
         style={{
-          color: "#94a3b8",
-          fontSize: "16px",
+          color: "#aaaaaa",
+          fontSize: "21px",
           fontFamily: "Arial, sans-serif",
-          marginBottom: "40px",
+          marginBottom: "48px",
         }}
       >
         Usa los botones para ajustar el número
@@ -295,13 +292,13 @@ function Counter() {
       <div
         style={{
           display: "inline-block",
-          backgroundColor: DARK_COUNTER,
-          borderRadius: "14px",
-          padding: "32px 56px",
+          backgroundColor: "#16213e",
+          borderRadius: "18px",
+          padding: "60px 56px",
           marginBottom: "20px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "40px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "54px",marginTop:"12px" }}>
           <button
             style={btnStyle}
             onClick={() => setCount((c) => Math.max(0, c - 1))}
@@ -313,7 +310,7 @@ function Counter() {
           <span
             style={{
               color: CORAL,
-              fontSize: "48px",
+              fontSize: "72px",
               fontWeight: 700,
               fontFamily: "Arial, sans-serif",
               minWidth: "60px",
@@ -334,7 +331,7 @@ function Counter() {
         </div>
       </div>
 
-      <p style={{ color: "#94a3b8", fontSize: "15px", fontFamily: "Arial, sans-serif" }}>
+      <p style={{ color: "#aaaaaa", fontSize: "19px", fontFamily: "Arial, sans-serif" }}>
         estudiantes inscritos
       </p>
     </section>
@@ -345,14 +342,14 @@ function Footer() {
   return (
     <footer
       style={{
-        backgroundColor: "#000000",
-        padding: "22px 48px",
+        backgroundColor: "#111111",
+        padding: "47px 48px",
         textAlign: "center",
       }}
     >
-      <p style={{ color: "#94a3b8", fontSize: "14px", fontFamily: "Arial, sans-serif" }}>
+      <p style={{ color: "#77736f", fontSize: "18.6px", fontFamily: "Arial, sans-serif" }}>
         © 2026{" "}
-        <span style={{ color: CORAL, fontWeight: 600 }}>ReactAcademy</span>
+        <span style={{ color: CORAL, fontWeight: 400 }}>ReactAcademy</span>
         {". Taller 02 — React Fundamentos."}
       </p>
     </footer>
