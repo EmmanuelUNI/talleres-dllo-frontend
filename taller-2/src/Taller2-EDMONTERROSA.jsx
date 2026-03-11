@@ -135,7 +135,7 @@ const courses = [
     badge: "Intermedio",
   },
   {
-    icon: "📁",
+    icon: "🗂️",
     title: "Estado Global",
     desc: "Gestiona el estado con Context API y aprende cuándo usarlo.",
     badge: "Intermedio",
@@ -154,19 +154,19 @@ function CourseCard({ icon, title, desc, badge }) {
       style={{
         backgroundColor: CARD_BG,
         borderRadius: "12px",
-        padding: "28px 24px",
+        padding: "28px 36px",
         flex: "1 1 0",
-        minWidth: 0,
+        minWidth: 350,
         boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
         display: "flex",
         flexDirection: "column",
-        gap: "12px",
+        gap: "30px",
       }}
     >
       <div style={{ fontSize: "36px", lineHeight: 1 }}>{icon}</div>
       <h3
         style={{
-          fontSize: "18px",
+          fontSize: "28px",
           fontWeight: 700,
           color: "#1a202c",
           fontFamily: "Arial, sans-serif",
@@ -176,8 +176,8 @@ function CourseCard({ icon, title, desc, badge }) {
       </h3>
       <p
         style={{
-          color: "#718096",
-          fontSize: "14px",
+          color: "#777777",
+          fontSize: "20px",
           lineHeight: 1.6,
           fontFamily: "Arial, sans-serif",
           flex: 1,
@@ -208,23 +208,24 @@ function CourseCard({ icon, title, desc, badge }) {
 function CoursesSection() {
   return (
     <section style={{ backgroundColor: LIGHT_BG, padding: "72px 48px 80px" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1610px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <h2
             style={{
-              fontSize: "36px",
-              fontWeight: 800,
+              marginTop: "31px",
+              fontSize: "42px",
+              fontWeight: 600,
               color: "#1a202c",
               fontFamily: "Arial, sans-serif",
-              marginBottom: "10px",
+              marginBottom: "34px",
             }}
           >
             Nuestros Cursos
           </h2>
           <p
             style={{
-              color: "#718096",
-              fontSize: "16px",
+              color: "#777777",
+              fontSize: "21.3px",
               fontFamily: "Arial, sans-serif",
             }}
           >
