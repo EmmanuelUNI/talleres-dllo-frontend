@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router";
 
 const CORAL = "#e94560";
+const ACTIVE_COLOR = "#999999";
 
 export default function Navbar() {
   return (
@@ -34,7 +35,6 @@ export default function Navbar() {
       </Link>
 
       <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
-        {/* Links de navegación — NavLink en vez de <a href="#"> */}
         {[
           { label: "Inicio",   to: "/",         end: true },
           { label: "Cursos",   to: "/cursos" },
@@ -45,23 +45,22 @@ export default function Navbar() {
             to={to}
             end={end}
             style={({ isActive }) => ({
-              color: isActive ? CORAL : "#cac5bf",
+              color: isActive ? ACTIVE_COLOR : "#cac5bf",
               textDecoration: "none",
               fontFamily: "Arial, sans-serif",
               fontSize: "20px",
-              fontWeight: isActive ? 600 : 400,
+              fontWeight: 400,
             })}
-            onMouseEnter={(e) => (e.currentTarget.style.color = CORAL)}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
             onMouseLeave={(e) => {
               const active = e.currentTarget.getAttribute("aria-current") === "page";
-              e.currentTarget.style.color = active ? CORAL : "#cac5bf";
+              e.currentTarget.style.color = active ? ACTIVE_COLOR : "#cac5bf";
             }}
           >
             {label}
           </NavLink>
         ))}
 
-        {/* Botón Ingresar → /login (nueva ruta del Taller 03) */}
         <NavLink
           to="/login"
           style={({ isActive }) => ({

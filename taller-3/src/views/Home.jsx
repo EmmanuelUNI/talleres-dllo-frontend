@@ -5,9 +5,7 @@ const CORAL = "#e94560";
 const CARD_BG = "#ffffff";
 const LIGHT_BG = "#f3f4f6";
 
-/* ── Hero ─────────────────────────────────────────
-   Igual al Taller 2, solo el botón usa Link en vez de <button>
-──────────────────────────────────────────────────── */
+
 function Hero() {
   return (
     <section

@@ -1,31 +1,40 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const CORAL = "#e94560";
 
-/* ── Vista /login ─────────────────────────────────
-   Solo UI — sin autenticación real (requisito taller)
-   • Botón deshabilitado si los campos están vacíos
-   • Inputs deshabilitados después de enviar
-──────────────────────────────────────────────────── */
 export default function Login() {
   const [email, setEmail]       = useState("");
   const [password, setPassword] = useState("");
   const [enviado, setEnviado]   = useState(false);
   const [enviando, setEnviando] = useState(false);
+  const navigate = useNavigate();
 
-  const camposLlenos = email.trim().length > 0 && password.length > 0;
+  const camposLlenos  = email.trim().length > 0 && password.length > 0;
   const deshabilitado = enviando || enviado;
 
   function handleSubmit() {
     if (!camposLlenos || deshabilitado) return;
     setEnviando(true);
-    // Simula envío: deshabilita inputs → pequeña pausa → marca como enviado
     setTimeout(() => {
       setEnviando(false);
       setEnviado(true);
     }, 1500);
   }
+
+  const inputStyle = (disabled) => ({
+    width: "100%",
+    padding: "12px 16px",
+    border: "1.5px solid #e2e8f0",
+    borderRadius: "10px",
+    fontSize: "16px",
+    fontFamily: "Arial, sans-serif",
+    color: "#1a202c",
+    backgroundColor: disabled ? "#f7f7f7" : "#ffffff",
+    cursor: disabled ? "not-allowed" : "text",
+    outline: "none",
+    boxSizing: "border-box",
+  });
 
   return (
     <div
@@ -37,8 +46,37 @@ export default function Login() {
         justifyContent: "center",
         padding: "40px 24px",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
       }}
     >
+      {/* ── Botón volver ── */}
+      <button
+        onClick={() => navigate(-1)}
+        title="Volver"
+        style={{
+          position: "absolute",
+          top: "28px",
+          left: "28px",
+          background: "rgba(255,255,255,0.08)",
+          border: "1px solid rgba(255,255,255,0.15)",
+          borderRadius: "50%",
+          width: "44px",
+          height: "44px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+          color: "#ffffff",
+          fontSize: "20px",
+          transition: "background 0.15s ease",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.16)")}
+        onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+      >
+        ←
+      </button>
+
+      {/* ── Card ── */}
       <div
         style={{
           backgroundColor: "#ffffff",
@@ -49,49 +87,18 @@ export default function Login() {
           boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
         }}
       >
-        {/* Logo */}
-        <div style={{ textAlign: "center", marginBottom: "32px" }}>
-          <Link
-            to="/"
-            style={{
-              color: CORAL,
-              fontWeight: 700,
-              fontSize: "28px",
-              fontFamily: "Arial, sans-serif",
-              letterSpacing: "-0.3px",
-              textDecoration: "none",
-            }}
-          >
-            ReactAcademy
-          </Link>
-        </div>
-
         {/* Título */}
         <h1
           style={{
             fontSize: "28px",
             fontWeight: 700,
             color: "#1a202c",
-            fontFamily: "Arial, sans-serif",
             textAlign: "center",
-            marginBottom: "8px",
+            marginBottom: "32px",
           }}
         >
           Ingresar
         </h1>
-
-        {/* Microcopy obligatorio — requisito del taller */}
-        <p
-          style={{
-            textAlign: "center",
-            color: "#888888",
-            fontSize: "14px",
-            fontFamily: "Arial, sans-serif",
-            marginBottom: "32px",
-          }}
-        >
-          Solo interfaz, no valida credenciales
-        </p>
 
         {/* Campo email */}
         <div style={{ marginBottom: "20px" }}>
@@ -102,7 +109,6 @@ export default function Login() {
               fontSize: "15px",
               fontWeight: 600,
               color: "#1a202c",
-              fontFamily: "Arial, sans-serif",
               marginBottom: "6px",
             }}
           >
@@ -115,19 +121,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             disabled={deshabilitado}
             placeholder="tu@email.com"
-            style={{
-              width: "100%",
-              padding: "12px 16px",
-              border: "1.5px solid #e2e8f0",
-              borderRadius: "10px",
-              fontSize: "16px",
-              fontFamily: "Arial, sans-serif",
-              color: "#1a202c",
-              backgroundColor: deshabilitado ? "#f7f7f7" : "#ffffff",
-              cursor: deshabilitado ? "not-allowed" : "text",
-              outline: "none",
-              boxSizing: "border-box",
-            }}
+            style={inputStyle(deshabilitado)}
             onFocus={(e) => (e.currentTarget.style.borderColor = CORAL)}
             onBlur={(e)  => (e.currentTarget.style.borderColor = "#e2e8f0")}
           />
@@ -142,7 +136,6 @@ export default function Login() {
               fontSize: "15px",
               fontWeight: 600,
               color: "#1a202c",
-              fontFamily: "Arial, sans-serif",
               marginBottom: "6px",
             }}
           >
@@ -155,25 +148,13 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             disabled={deshabilitado}
             placeholder="Tu contraseña"
-            style={{
-              width: "100%",
-              padding: "12px 16px",
-              border: "1.5px solid #e2e8f0",
-              borderRadius: "10px",
-              fontSize: "16px",
-              fontFamily: "Arial, sans-serif",
-              color: "#1a202c",
-              backgroundColor: deshabilitado ? "#f7f7f7" : "#ffffff",
-              cursor: deshabilitado ? "not-allowed" : "text",
-              outline: "none",
-              boxSizing: "border-box",
-            }}
+            style={inputStyle(deshabilitado)}
             onFocus={(e) => (e.currentTarget.style.borderColor = CORAL)}
             onBlur={(e)  => (e.currentTarget.style.borderColor = "#e2e8f0")}
           />
         </div>
 
-        {/* Botón — DESHABILITADO si campos vacíos (requisito del taller) */}
+        {/* Botón */}
         <button
           onClick={handleSubmit}
           disabled={!camposLlenos || deshabilitado}
@@ -203,14 +184,13 @@ export default function Login() {
           {enviando ? "Ingresando…" : enviado ? "✓ Ingresado" : "Ingresar"}
         </button>
 
-        {/* Feedback de éxito */}
+        {/* Feedback */}
         {enviado && (
           <p
             style={{
               textAlign: "center",
               color: "#38a169",
               fontSize: "15px",
-              fontFamily: "Arial, sans-serif",
               marginBottom: "16px",
             }}
           >
@@ -218,15 +198,8 @@ export default function Login() {
           </p>
         )}
 
-        {/* Link de regreso */}
-        <p
-          style={{
-            textAlign: "center",
-            color: "#888888",
-            fontSize: "14px",
-            fontFamily: "Arial, sans-serif",
-          }}
-        >
+        {/* Link a cursos */}
+        <p style={{ textAlign: "center", color: "#888888", fontSize: "14px" }}>
           ¿No tienes cuenta?{" "}
           <Link
             to="/cursos"
